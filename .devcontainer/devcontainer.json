@@ -1,20 +1,38 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
-  },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
-  "customizations": {
-    "codespaces": {
-      "openFiles": []
+    "name": "Stable Mass Transfer Sandbox",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        // Official-ish uv feature: handles PATH and installation automatically
+        "ghcr.io/devcontainers-extra/features/uv:1": {},
+        // Adds common C++ build tools and BLAS/LAPACK for JAX/NumPyro performance
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "configureZshAsDefaultShell": true
+        }
     },
-    "vscode": {
-      "extensions": [
-        "ms-toolsai.jupyter",
-        "ms-python.python"
-      ]
-    }
-  }
+
+    // Simplified: uv is already on the PATH thanks to the feature above
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libopenblas-dev && uv sync",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // Pre-sets the interpreter so students don't have to 'Select Kernel'
+                "python.defaultInterpreterPath": ".venv/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "python-envs.alwaysUseUv": true,
+                "jupyter.notebookEditor.defaultKernel": ".venv"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.vscode-python-envs",
+                "MouradGHAFIRI.uv-vscode-extension",
+                "charliermarsh.ruff"
+            ]
+        }
+    },
+
+    "remoteUser": "vscode"
 }
