@@ -4,7 +4,7 @@ Analytical model for the mass ratio distribution of binary black holes (BBHs) fo
 
 ## Overview
 
-This repository derives and validates the probability distribution $p(q_{\rm obs} | \vec{\Lambda}_{\rm SMT})$ — the observed mass ratio of BBH mergers as a function of the SMT channel parameters — following the framework of [van Son et al. (2022)](#citation).
+This repository computes and visualizes the expected distribution of mass ratios of BBH mergers from the stable mass transfer (SMT) channel, $p(q_{\rm obs} | \vec{\Lambda}_{\rm SMT})$, following the framework of [van Son et al. (2022)](#citation).
 
 ## Stable Mass Transfer Analytical Model
 
