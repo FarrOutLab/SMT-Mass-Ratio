@@ -59,12 +59,40 @@ Since we do not know which observed systems are mass-ratio reversed ($q_{\rm obs
 
 $$p(q_{\rm obs} | \vec{\Lambda}_{\rm SMT}) = p\!\left(q_{\rm ZAMS}(q_{\rm obs})\mid\vec{\Lambda}_{\rm SMT}\right)\frac{d q_{\rm ZAMS}(q_{\rm obs})}{d q_{\rm obs}} + p\!\left(q_{\rm ZAMS}(1/q_{\rm obs})\mid\vec{\Lambda}_{\rm SMT}\right)\frac{d q_{\rm ZAMS}(1/q_{\rm obs})}{d q_{\rm obs}}$$
 
+## Web Widget
+
+A standalone, embeddable version of the interactive widget lives in the [`widget/`](widget/) directory. It requires **no frameworks or build tools** — just a `<script>` tag.
+
+### Quick Start
+
+Add the following to any HTML page:
+
+```html
+<div id="smt-widget"></div>
+<script src="widget/smt-widget.js"></script>
+<script>
+  SMTWidget.init("smt-widget");
+</script>
+```
+
+To start in light mode, pass `{ light: true }`:
+
+```js
+SMTWidget.init("smt-widget", { light: true });
+```
+
+Open `widget/index.html` in a browser to preview the widget locally. A live version is hosted at [gw.observer/research/smt-widget](https://gw.observer/research/smt-widget).
+
+Plotly.js and MathJax are loaded automatically from public CDNs on first use.
+
 ## Repository Contents
 
 | File | Description |
 |---|---|
 | `mass_ratio_widget.ipynb` | Analytical derivations with an interactive widget for exploring the parameter space |
 | `MC_validation.ipynb` | Monte Carlo validation of the analytical model |
+| `widget/smt-widget.js` | Standalone embeddable widget (HTML/CSS/JS, no dependencies) |
+| `widget/index.html` | Demo page for previewing the widget |
 
 ## Parameters
 
