@@ -1,6 +1,6 @@
 # SMT-Mass-Ratio
 
-Analytical model for the mass ratio distribution of binary black holes (BBHs) formed through the stable mass transfer (SMT) channel.
+Analytical model for the mass ratio distribution of binary black holes (BBHs) formed through the stable mass transfer (SMT) channel.  An interactive widget can be found in the jupyter notebook `mass_ratio_widget.ipynb`, with a live version at [GW Observer's SMT Mass Ratio Widget](https://gw.observer/research/smt-widget).
 
 ## Overview
 
